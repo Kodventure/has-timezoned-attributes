@@ -30,8 +30,8 @@ class Member extends Model
 Then access:
 
 ```php
-$member->created_at_timezoned;
-$member->last_login_at_timezoned;
+$member->created_at_tz;
+$member->last_login_at_tz;
 ```
 
 ## Timezone Resolution
