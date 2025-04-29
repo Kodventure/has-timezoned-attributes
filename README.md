@@ -1,6 +1,6 @@
 # HasTimezonedAttributes for Laravel
 
-Automatically adds *_timezoned attributes to your Eloquent models for timestamp fields, based on the user's or application's timezone.
+Automatically adds *_tz attributes to your Eloquent models for timestamp fields, based on the user's or application's timezone.
     
 ## Installation
 
