@@ -1,0 +1,17 @@
+{
+    "name": "kodventure/has-timezoned-attributes",
+    "description": "Automatically adds *_tz attributes to Eloquent models for timestamp fields, based on the user's or application's timezone.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kodventure\\HasTimezonedAttributes\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "illuminate/database": "^9.0|^10.0|^11.0"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
