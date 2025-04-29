@@ -11,7 +11,7 @@ trait HasTimezonedAttributes
         static::retrieved(function ($model) {
             foreach ($model->getCasts() as $attribute => $cast) {
                 if (Str::endsWith($attribute, '_at') && in_array($cast, ['datetime', 'timestamp'])) {
-                    $timezonedAttribute = $attribute . '_timezoned';
+                    $timezonedAttribute = $attribute . '_tz';
 
                     if (! in_array($timezonedAttribute, $model->appends ?? [])) {
                         $model->appends[] = $timezonedAttribute;
@@ -23,8 +23,8 @@ trait HasTimezonedAttributes
 
     public function __get($key)
     {
-        if (Str::endsWith($key, '_timezoned')) {
-            $originalAttribute = Str::beforeLast($key, '_timezoned');
+        if (Str::endsWith($key, '_tz')) {
+            $originalAttribute = Str::beforeLast($key, '_tz');
 
             if ($this->getAttribute($originalAttribute)) {
                 return $this->convertToTimezone($this->getAttribute($originalAttribute));
