@@ -53,4 +53,13 @@ trait HasTimezonedAttributes
 
         return config('app.timezone', 'UTC');
     }
+
+    public function __call($method, $parameters)
+    {
+        if (preg_match('/^get(.+)TzAttribute$/', $method, $matches)) {
+            $attribute = Str::snake($matches[1]) . '_tz';
+            return $this->__get($attribute);
+        }
+        return parent::__call($method, $parameters);
+    }    
 }
