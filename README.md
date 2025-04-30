@@ -15,7 +15,7 @@ Add the trait to any model:
 ```php
 use Kodventure\HasTimezonedAttributes\HasTimezonedAttributes;
 
-class Member extends Model
+class User extends Model
 {
     use HasTimezonedAttributes;
 
@@ -30,8 +30,11 @@ class Member extends Model
 Then access:
 
 ```php
-$member->created_at_tz;
-$member->last_login_at_tz;
+$user->created_at_tz;
+$user->last_login_at_tz;
+$user->email_verified_at_tz;
+$user->getEmailVerifiedAtTzAttribute();
+$user->getEmailVerifiedAtTz();
 ```
 
 ## Timezone Resolution
